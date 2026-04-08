@@ -263,6 +263,12 @@ function PracticeContent() {
 
   return (
     <div className="flex flex-col h-screen bg-zinc-50 overflow-hidden">
+      {/* Mobile Notice */}
+      <div className="md:hidden bg-amber-50 border-b border-amber-200 px-4 py-3 text-center">
+        <p className="text-sm text-amber-800">
+          💻 코드 에디터는 PC에서 최적화되어 있습니다. PC로 접속하시면 더 좋은 경험을 할 수 있어요!
+        </p>
+      </div>
       {/* Header */}
       <header className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 flex items-center justify-between shrink-0 shadow-sm">
         <div className="flex items-center gap-3">

@@ -5,18 +5,18 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white scroll-smooth">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-zinc-100 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🐛</span>
-            <span className="text-xl font-bold text-zinc-900">BugHunter</span>
+            <span className="text-xl sm:text-2xl">🐛</span>
+            <span className="text-lg sm:text-xl font-bold text-zinc-900">BugHunter</span>
           </div>
-          <div className="flex items-center gap-6">
-            <a href="#problem" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors hidden sm:inline">문제점</a>
-            <a href="#solution" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors hidden sm:inline">솔루션</a>
-            <a href="#compare" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors hidden sm:inline">차별점</a>
+          <div className="flex items-center gap-3 sm:gap-6">
+            <a href="#problem" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors hidden md:inline">문제점</a>
+            <a href="#solution" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors hidden md:inline">솔루션</a>
+            <a href="#compare" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors hidden md:inline">차별점</a>
             <Link
               href="/quiz"
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-blue-600 text-white text-xs sm:text-sm font-medium hover:bg-blue-700 transition-colors"
             >
               레벨 진단하기
             </Link>
@@ -25,16 +25,16 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-amber-50/30" />
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-medium mb-6 sm:mb-8">
             <span>🏆</span>
             <span>AI활용 차세대 교육 솔루션 공모전 출품작</span>
           </div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-zinc-900 mb-6 tracking-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-zinc-900 mb-4 sm:mb-6 tracking-tight">
             BugHunter <span className="inline-block">🐛</span>
           </h1>
           <p className="text-xl sm:text-2xl text-zinc-600 mb-2 font-medium leading-relaxed">
@@ -43,7 +43,7 @@ export default function LandingPage() {
           <p className="text-sm sm:text-base text-blue-600 font-medium mb-2">
             강사와 수강생 모두를 위한 AI 디버깅 교육 도구
           </p>
-          <div className="max-w-2xl mx-auto mb-10">
+          <div className="max-w-2xl mx-auto mb-8 sm:mb-10">
             <p className="text-base sm:text-lg text-zinc-500 leading-relaxed">
               모든 교육은 코드 <strong className="text-zinc-700">짜는 법</strong>을 가르칩니다.<br />
               하지만 실무의 60%는 코드 <strong className="text-amber-600">고치는 법</strong>입니다.
@@ -73,8 +73,8 @@ export default function LandingPage() {
       </section>
 
       {/* Problem Section */}
-      <section id="problem" className="py-20 bg-zinc-900 scroll-mt-16">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="problem" className="py-14 sm:py-20 bg-zinc-900 scroll-mt-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <span className="inline-block px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-sm font-medium mb-4">PROBLEM</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">교육 현장의 진짜 문제</h2>
@@ -104,8 +104,8 @@ export default function LandingPage() {
       </section>
 
       {/* Solution Section */}
-      <section id="solution" className="py-20 bg-white scroll-mt-16">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="solution" className="py-14 sm:py-20 bg-white scroll-mt-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-4">SOLUTION</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">BugHunter는 다릅니다</h2>
@@ -147,8 +147,8 @@ export default function LandingPage() {
       </section>
 
       {/* Differentiator Section */}
-      <section id="compare" className="py-20 bg-zinc-50 scroll-mt-16">
-        <div className="max-w-4xl mx-auto px-6">
+      <section id="compare" className="py-14 sm:py-20 bg-zinc-50 scroll-mt-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <span className="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-sm font-medium mb-4">COMPARE</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">기존 도구와 뭐가 다른가요?</h2>
@@ -192,14 +192,14 @@ export default function LandingPage() {
       </section>
 
       {/* How it works */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-14 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <span className="inline-block px-3 py-1 rounded-full bg-green-50 text-green-600 text-sm font-medium mb-4">HOW IT WORKS</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">이렇게 동작합니다</h2>
             <p className="text-zinc-500 text-lg">3분이면 체험할 수 있습니다</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <StepCard step={1} title="주제 선택" description="강사 또는 학생이 학습할 프로그래밍 주제를 선택합니다" />
             <StepCard step={2} title="AI가 버그 생성" description="선택한 주제와 난이도에 맞춰 AI가 버그가 숨겨진 코드를 만듭니다" />
             <StepCard step={3} title="디버깅 도전" description="코드를 실행하고 분석하며 버그를 찾아 수정합니다. 막히면 AI 힌트!" />
