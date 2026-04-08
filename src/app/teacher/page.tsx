@@ -121,6 +121,14 @@ export default function TeacherDashboard() {
       </header>
 
       <main className="max-w-7xl mx-auto px-6 py-6 space-y-6">
+        {/* Key Message */}
+        <div className="bg-blue-50 border border-blue-100 rounded-xl px-5 py-4 flex items-center gap-3">
+          <span className="text-2xl">💡</span>
+          <p className="text-sm text-blue-800">
+            <strong>AI가 25명의 학생에게 실시간 힌트를 제공합니다.</strong> 강사님은 아래에서 고전 중인 학생을 확인하고 집중 지도하세요.
+          </p>
+        </div>
+
         {/* Refresh Button */}
         <div className="flex justify-end">
           <button

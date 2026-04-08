@@ -391,16 +391,30 @@ function PracticeContent() {
         <div className="w-[380px] shrink-0 bg-white border-r border-zinc-200 flex flex-col overflow-hidden">
           <div className="flex-1 overflow-y-auto p-5">
             {!problem ? (
-              <div className="flex flex-col items-center justify-center h-full text-center">
+              <div className="flex flex-col items-center justify-center h-full text-center px-4">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center mb-6">
                   <span className="text-5xl">🐛</span>
                 </div>
                 <p className="text-lg font-bold text-zinc-800 mb-2">버그를 잡을 준비 되셨나요?</p>
                 <p className="text-sm text-zinc-500 mb-6 leading-relaxed">
-                  주제와 난이도를 선택하고<br />
-                  &ldquo;새 문제 생성&rdquo; 버튼을 눌러<br />
-                  디버깅 챌린지를 시작하세요!
+                  AI가 만든 버그 코드에서 문제를 찾아 수정해보세요!<br />
+                  막히면 AI 힌트가 도와줍니다.
                 </p>
+                <div className="bg-zinc-50 rounded-xl p-4 w-full max-w-[280px] text-left space-y-3 mb-4">
+                  <p className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">시작 방법</p>
+                  <div className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                    <p className="text-sm text-zinc-600">위에서 <strong>학생 이름</strong> 입력</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                    <p className="text-sm text-zinc-600"><strong>주제</strong>와 <strong>난이도</strong> 선택</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                    <p className="text-sm text-zinc-600"><strong>새 문제 생성</strong> 버튼 클릭!</p>
+                  </div>
+                </div>
                 <div className="space-y-3 w-full max-w-[240px]">
                   <div className="flex items-center gap-3 text-left">
                     <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm shrink-0">1</div>
