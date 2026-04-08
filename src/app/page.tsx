@@ -15,10 +15,10 @@ export default function LandingPage() {
             <a href="#solution" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors hidden sm:inline">솔루션</a>
             <a href="#compare" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors hidden sm:inline">차별점</a>
             <Link
-              href="/practice"
+              href="/quiz"
               className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors"
             >
-              시작하기
+              레벨 진단하기
             </Link>
           </div>
         </div>
@@ -48,10 +48,16 @@ export default function LandingPage() {
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/practice"
+              href="/quiz"
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-600 text-white text-lg font-semibold hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-blue-200 active:scale-[0.98]"
             >
-              학생으로 시작하기
+              레벨 진단하기
+            </Link>
+            <Link
+              href="/practice"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-zinc-700 text-lg font-semibold border-2 border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50 transition-all active:scale-[0.98]"
+            >
+              바로 연습하기
             </Link>
             <Link
               href="/teacher"
@@ -194,7 +200,7 @@ export default function LandingPage() {
             <StepCard step={1} title="주제 선택" description="강사 또는 학생이 학습할 프로그래밍 주제를 선택합니다" />
             <StepCard step={2} title="AI가 버그 생성" description="선택한 주제와 난이도에 맞춰 AI가 버그가 숨겨진 코드를 만듭니다" />
             <StepCard step={3} title="디버깅 도전" description="코드를 실행하고 분석하며 버그를 찾아 수정합니다. 막히면 AI 힌트!" />
-            <StepCard step={4} title="성장 확인" description="강사 대시보드에서 학생별 현황과 취약 패턴을 한눈에 확인합니다" />
+            <StepCard step={4} title="성장 확인" description="성장 리포트에서 레벨 진행도, 주제별 강점/약점, 해결률 변화를 한눈에 확인합니다" />
           </div>
         </div>
       </section>
@@ -227,11 +233,17 @@ export default function LandingPage() {
           <p className="text-zinc-400 text-sm mb-2">AI활용 차세대 교육 솔루션 공모전 출품작</p>
           <p className="text-zinc-500 text-xs">Powered by GPT-4o, Next.js, Supabase</p>
           <div className="mt-6 flex items-center justify-center gap-6">
+            <Link href="/quiz" className="text-zinc-400 text-sm hover:text-white transition-colors">
+              레벨 진단
+            </Link>
             <Link href="/practice" className="text-zinc-400 text-sm hover:text-white transition-colors">
               학생 모드
             </Link>
             <Link href="/teacher" className="text-zinc-400 text-sm hover:text-white transition-colors">
               강사 모드
+            </Link>
+            <Link href="/report" className="text-zinc-400 text-sm hover:text-white transition-colors">
+              성장 리포트
             </Link>
           </div>
         </div>

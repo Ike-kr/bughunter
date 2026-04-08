@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { runPython, getPyodide } from "@/lib/pyodide";
 
 const MonacoEditor = dynamic(() => import("@monaco-editor/react"), {
@@ -42,10 +43,31 @@ const LEVELS = [
 ] as const;
 
 export default function PracticePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center h-screen bg-zinc-50 text-zinc-500">
+          로딩 중...
+        </div>
+      }
+    >
+      <PracticeContent />
+    </Suspense>
+  );
+}
+
+function PracticeContent() {
+  const searchParams = useSearchParams();
+  const levelParam = searchParams.get("level");
+  const initialLevel =
+    levelParam === "beginner" || levelParam === "intermediate" || levelParam === "advanced"
+      ? levelParam
+      : "beginner";
+
   const [studentName, setStudentName] = useState("");
   const [topic, setTopic] = useState(TOPICS[2]);
   const [level, setLevel] = useState<"beginner" | "intermediate" | "advanced">(
-    "beginner"
+    initialLevel
   );
   const [problem, setProblem] = useState<BugProblem | null>(null);
   const [code, setCode] = useState("");
@@ -261,10 +283,22 @@ export default function PracticePage() {
             홈
           </Link>
           <Link
+            href="/quiz"
+            className="text-xs text-blue-200 hover:text-white hover:underline transition-colors"
+          >
+            레벨 진단
+          </Link>
+          <Link
             href="/teacher"
             className="text-xs text-blue-200 hover:text-white hover:underline transition-colors"
           >
             강사 모드
+          </Link>
+          <Link
+            href="/report"
+            className="text-xs text-blue-200 hover:text-white hover:underline transition-colors"
+          >
+            내 성장 리포트
           </Link>
           <div className="flex items-center gap-2 text-xs text-blue-100">
             <span

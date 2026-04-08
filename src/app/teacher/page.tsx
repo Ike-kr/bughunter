@@ -128,6 +128,12 @@ export default function TeacherDashboard() {
             홈
           </Link>
           <Link
+            href="/report"
+            className="text-sm text-blue-200 hover:text-white hover:underline transition-colors"
+          >
+            성장 리포트
+          </Link>
+          <Link
             href="/practice"
             className="text-sm text-blue-200 hover:text-white hover:underline transition-colors"
           >
