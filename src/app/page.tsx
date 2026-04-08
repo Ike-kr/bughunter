@@ -37,8 +37,11 @@ export default function LandingPage() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-zinc-900 mb-6 tracking-tight">
             BugHunter <span className="inline-block">🐛</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-zinc-600 mb-4 font-medium leading-relaxed">
+          <p className="text-xl sm:text-2xl text-zinc-600 mb-2 font-medium leading-relaxed">
             AI가 만든 버그를 찾아라!<br className="sm:hidden" /> 디버깅으로 성장하는 코딩 교육 플랫폼
+          </p>
+          <p className="text-sm sm:text-base text-blue-600 font-medium mb-2">
+            강사와 수강생 모두를 위한 AI 디버깅 교육 도구
           </p>
           <div className="max-w-2xl mx-auto mb-10">
             <p className="text-base sm:text-lg text-zinc-500 leading-relaxed">
@@ -46,7 +49,7 @@ export default function LandingPage() {
               하지만 실무의 60%는 코드 <strong className="text-amber-600">고치는 법</strong>입니다.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-3">
             <Link
               href="/quiz"
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-600 text-white text-lg font-semibold hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-blue-200 active:scale-[0.98]"
