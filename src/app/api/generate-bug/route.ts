@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { openai } from "@/lib/openai";
+import { safeParseJSON } from "@/lib/utils";
 
 export async function POST(request: NextRequest) {
   try {
@@ -62,10 +63,46 @@ ${levelDescriptions[level] || levelDescriptions.beginner}
       );
     }
 
-    const result = JSON.parse(content);
-    return NextResponse.json(result);
+    // 안전한 JSON 파싱 (마크다운 코드 블록 처리 포함)
+    try {
+      const result = safeParseJSON(content);
+
+      // 필수 필드 검증
+      const parsed = result as Record<string, unknown>;
+      const requiredFields = ["title", "description", "bugType", "buggyCode", "correctCode"];
+      const missingFields = requiredFields.filter((f) => !parsed[f]);
+      if (missingFields.length > 0) {
+        console.error("AI 응답에 필수 필드 누락:", missingFields, "원본:", content);
+        return NextResponse.json(
+          { error: `AI 응답에 필수 필드가 누락되었습니다: ${missingFields.join(", ")}. 다시 시도해주세요.` },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json(result);
+    } catch (parseError) {
+      console.error("JSON 파싱 에러:", parseError, "원본:", content);
+      return NextResponse.json(
+        { error: "AI 응답을 파싱하지 못했습니다. 다시 시도해주세요." },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     console.error("버그 생성 에러:", error);
+    const message = error instanceof Error ? error.message : "알 수 없는 오류";
+    // API 키 문제인지 확인
+    if (message.includes("429") || message.includes("quota")) {
+      return NextResponse.json(
+        { error: "API 사용량 초과입니다. 잠시 후 다시 시도해주세요." },
+        { status: 429 }
+      );
+    }
+    if (message.includes("401") || message.includes("API key")) {
+      return NextResponse.json(
+        { error: "API 키가 유효하지 않습니다. 설정을 확인해주세요." },
+        { status: 401 }
+      );
+    }
     return NextResponse.json(
       { error: "버그 코드 생성 중 오류가 발생했습니다." },
       { status: 500 }

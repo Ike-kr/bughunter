@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { openai } from "@/lib/openai";
+import { safeParseJSON } from "@/lib/utils";
 
 export async function POST(request: NextRequest) {
   try {
@@ -75,10 +76,25 @@ ${hintDescriptions[hintLevel] || hintDescriptions[1]}
       );
     }
 
-    const result = JSON.parse(content);
-    return NextResponse.json(result);
+    try {
+      const result = safeParseJSON(content);
+      return NextResponse.json(result);
+    } catch (parseError) {
+      console.error("힌트 JSON 파싱 에러:", parseError, "원본:", content);
+      // 파싱 실패 시 원본 텍스트를 힌트로 반환
+      return NextResponse.json({
+        hint: content.replace(/```[\s\S]*?```/g, '').replace(/[{}]/g, '').trim()
+      });
+    }
   } catch (error) {
     console.error("힌트 생성 에러:", error);
+    const message = error instanceof Error ? error.message : "알 수 없는 오류";
+    if (message.includes("429") || message.includes("quota")) {
+      return NextResponse.json(
+        { error: "API 사용량 초과입니다. 잠시 후 다시 시도해주세요." },
+        { status: 429 }
+      );
+    }
     return NextResponse.json(
       { error: "힌트 생성 중 오류가 발생했습니다." },
       { status: 500 }

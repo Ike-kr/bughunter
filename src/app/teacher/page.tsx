@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase/client";
+import { LEVEL_BADGE, formatTime, formatDate } from "@/lib/utils";
 
 interface Submission {
   id: string;
@@ -21,29 +22,6 @@ interface BugTypeStats {
   total: number;
   solved: number;
   solveRate: number;
-}
-
-const LEVEL_BADGE: Record<string, { label: string; className: string }> = {
-  beginner: { label: "초급", className: "bg-green-100 text-green-700" },
-  intermediate: { label: "중급", className: "bg-yellow-100 text-yellow-700" },
-  advanced: { label: "고급", className: "bg-red-100 text-red-700" },
-};
-
-function formatTime(seconds: number | null): string {
-  if (seconds === null || seconds === undefined) return "-";
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return m > 0 ? `${m}분 ${s}초` : `${s}초`;
-}
-
-function formatDate(dateStr: string): string {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("ko-KR", {
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
 }
 
 export default function TeacherDashboard() {
