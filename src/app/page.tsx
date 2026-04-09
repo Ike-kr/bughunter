@@ -200,10 +200,10 @@ export default function LandingPage() {
             <p className="text-zinc-500 text-lg">3분이면 체험할 수 있습니다</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <StepCard step={1} title="주제 선택" description={`학습할 프로그래밍\n주제를 선택합니다`} />
-            <StepCard step={2} title="AI가 버그 생성" description={`주제와 난이도에 맞춰\nAI가 버그가 숨겨진\n코드를 만듭니다`} />
+            <StepCard step={1} title="주제 선택" description={`학습할 프로그래밍\n주제를 선택합니다.`} />
+            <StepCard step={2} title="AI가 버그 생성" description={`주제와 난이도에 맞춰\nAI가 버그가 숨겨진\n코드를 만듭니다.`} />
             <StepCard step={3} title="디버깅 도전" description={`코드를 실행하고 분석하며\n버그를 찾아 수정합니다.\n막히면 AI 힌트!`} />
-            <StepCard step={4} title="성장 확인" description={`레벨 진행도와\n주제별 강점/약점을\n한눈에 확인합니다`} />
+            <StepCard step={4} title="성장 확인" description={`레벨 진행도와\n주제별 강점/약점을\n한눈에 확인합니다.`} />
           </div>
         </div>
       </section>
