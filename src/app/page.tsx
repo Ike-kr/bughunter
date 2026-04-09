@@ -46,7 +46,7 @@ export default function LandingPage() {
           <div className="max-w-2xl mx-auto mb-8 sm:mb-10">
             <p className="text-base sm:text-lg text-zinc-500 leading-relaxed">
               모든 교육은 코드 <strong className="text-zinc-700">짜는 법</strong>을 가르칩니다.<br />
-              하지만 실무의 60%는 코드 <strong className="text-amber-600">고치는 법</strong>입니다.
+              하지만 실무 시간의 60%는 코드를 <strong className="text-amber-600">고치는 데</strong> 쓰입니다.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-3">
