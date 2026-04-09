@@ -83,20 +83,20 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <ProblemCard
               number="01"
-              title="30명 한 반, 수준은 천차만별"
-              description="강사 1명이 30명의 학생에게 개별 피드백을 줄 수 없습니다. 빠른 학생은 지루하고, 느린 학생은 따라갈 수 없습니다."
+              title="수십 명이 한 반, 수준은 천차만별"
+              description={`강사 1명이 수십 명의 학생에게\n개별 피드백을 줄 수 없습니다.\n\n빠른 학생은 지루하고,\n느린 학생은 따라갈 수 없습니다.`}
               icon="👥"
             />
             <ProblemCard
               number="02"
               title="중도 탈락률 30~50%"
-              description="성장을 체감하지 못한 학생은 포기합니다. '내가 얼마나 나아졌는지' 알 수 있는 피드백이 없습니다."
+              description={`성장을 체감하지 못한 학생은\n포기합니다.\n\n"내가 얼마나 나아졌는지"\n알 수 있는 피드백이 없습니다.`}
               icon="📉"
             />
             <ProblemCard
               number="03"
               title="수료해도 실무에서 디버깅 못 해"
-              description="코드 짜기만 배우고 고치기는 배우지 않습니다. 실무에 투입되면 디버깅에서 막힙니다."
+              description={`코드 짜기만 배우고\n고치기는 배우지 않습니다.\n\n실무에 투입되면\n디버깅에서 막힙니다.`}
               icon="🚫"
             />
           </div>
@@ -119,7 +119,7 @@ export default function LandingPage() {
                 </svg>
               }
               title="AI 맞춤형 실시간 출제"
-              description="AI가 주제와 난이도에 맞춰 매번 새로운 디버깅 문제를 생성합니다. 고정된 문제은행이 아닌, 맞춤형 실시간 출제 시스템입니다."
+              description={`AI가 주제와 난이도에 맞춰\n매번 새로운 디버깅 문제를 생성합니다.\n\n고정된 문제은행이 아닌,\n맞춤형 실시간 출제 시스템입니다.`}
               highlight="실시간 맞춤 출제"
             />
             <SolutionCard
@@ -129,7 +129,7 @@ export default function LandingPage() {
                 </svg>
               }
               title="3단계 AI 힌트 시스템"
-              description="답을 바로 주지 않고, 사고 과정을 단계별로 유도합니다. 방향 제시 → 범위 좁히기 → 거의 답, 스스로 문제를 해결하는 경험을 제공합니다."
+              description={`답을 바로 주지 않고,\n사고 과정을 단계별로 유도합니다.\n\n방향 제시 → 범위 좁히기 → 거의 답\n스스로 해결하는 경험을 제공합니다.`}
               highlight="코칭형 AI"
             />
             <SolutionCard
@@ -139,7 +139,7 @@ export default function LandingPage() {
                 </svg>
               }
               title="강사 대시보드"
-              description="30명의 풀이 현황을 한눈에 파악합니다. AI가 25명을 맡고, 강사는 가장 도움이 필요한 5명에 집중할 수 있습니다."
+              description={`수십 명의 풀이 현황을\n한눈에 파악합니다.\n\nAI가 대부분의 학생을 맡고,\n강사는 가장 도움이 필요한 학생에\n집중할 수 있습니다.`}
               highlight="효율적 관리"
             />
           </div>
@@ -200,10 +200,10 @@ export default function LandingPage() {
             <p className="text-zinc-500 text-lg">3분이면 체험할 수 있습니다</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <StepCard step={1} title="주제 선택" description="강사 또는 학생이 학습할 프로그래밍 주제를 선택합니다" />
-            <StepCard step={2} title="AI가 버그 생성" description="선택한 주제와 난이도에 맞춰 AI가 버그가 숨겨진 코드를 만듭니다" />
-            <StepCard step={3} title="디버깅 도전" description="코드를 실행하고 분석하며 버그를 찾아 수정합니다. 막히면 AI 힌트!" />
-            <StepCard step={4} title="성장 확인" description="성장 리포트에서 레벨 진행도, 주제별 강점/약점, 해결률 변화를 한눈에 확인합니다" />
+            <StepCard step={1} title="주제 선택" description={`학습할 프로그래밍\n주제를 선택합니다`} />
+            <StepCard step={2} title="AI가 버그 생성" description={`주제와 난이도에 맞춰\nAI가 버그가 숨겨진\n코드를 만듭니다`} />
+            <StepCard step={3} title="디버깅 도전" description={`코드를 실행하고 분석하며\n버그를 찾아 수정합니다.\n막히면 AI 힌트!`} />
+            <StepCard step={4} title="성장 확인" description={`레벨 진행도와\n주제별 강점/약점을\n한눈에 확인합니다`} />
           </div>
         </div>
       </section>
@@ -263,7 +263,7 @@ function ProblemCard({ number, title, description, icon }: { number: string; tit
         <span className="text-xs font-mono text-zinc-500">{number}</span>
       </div>
       <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-      <p className="text-sm text-zinc-400 leading-relaxed">{description}</p>
+      <p className="text-sm text-zinc-400 leading-relaxed whitespace-pre-line">{description}</p>
     </div>
   );
 }
@@ -275,8 +275,8 @@ function SolutionCard({ icon, title, description, highlight }: { icon: React.Rea
         {icon}
       </div>
       <span className="inline-block px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-600 text-xs font-medium mb-3">{highlight}</span>
-      <h3 className="text-lg font-bold text-zinc-900 mb-2">{title}</h3>
-      <p className="text-sm text-zinc-500 leading-relaxed">{description}</p>
+      <h3 className="text-lg font-bold text-zinc-900 mb-3">{title}</h3>
+      <p className="text-sm text-zinc-500 leading-relaxed whitespace-pre-line">{description}</p>
     </div>
   );
 }
@@ -288,7 +288,7 @@ function StepCard({ step, title, description }: { step: number; title: string; d
         {step}
       </div>
       <h3 className="text-base font-bold text-zinc-900 mb-2">{title}</h3>
-      <p className="text-sm text-zinc-500 leading-relaxed">{description}</p>
+      <p className="text-sm text-zinc-500 leading-relaxed whitespace-pre-line">{description}</p>
     </div>
   );
 }
