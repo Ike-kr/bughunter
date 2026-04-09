@@ -626,7 +626,7 @@ function PracticeContent() {
           </div>
 
           {/* Console Output — 축소된 사이즈 */}
-          <div className="h-[100px] shrink-0 bg-[#1e1e1e] border-t border-[#333] flex flex-col">
+          <div className="h-[220px] shrink-0 bg-[#1e1e1e] border-t border-[#333] flex flex-col">
             <div className="px-4 py-1.5 border-b border-[#333] flex items-center justify-between">
               <span className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
                 콘솔 출력
