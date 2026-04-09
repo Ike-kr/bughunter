@@ -370,19 +370,6 @@ function PracticeContent() {
           ))}
         </div>
 
-        <button
-          onClick={generateBug}
-          disabled={isGenerating}
-          className="ml-auto px-4 py-1.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        >
-          {isGenerating ? (
-            <span className="flex items-center gap-2">
-              <Spinner /> 생성 중...
-            </span>
-          ) : (
-            "새 문제 생성"
-          )}
-        </button>
       </div>
 
       {/* Main Content */}
@@ -521,75 +508,95 @@ function PracticeContent() {
             )}
           </div>
 
-          {/* Hint & Answer Buttons */}
-          {problem && (
-            <div className="border-t border-zinc-200 p-3 flex flex-col gap-2 shrink-0">
-              <button
-                onClick={handleGetHint}
-                disabled={isHinting || hintLevel >= 3}
-                className="w-full px-4 py-2.5 rounded-lg bg-purple-600 text-white text-sm font-bold hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm"
-              >
-                {isHinting ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <Spinner /> 생성 중
-                  </span>
-                ) : hintLevel >= 3 ? (
-                  "힌트 모두 사용"
-                ) : (
-                  `💡 힌트 받기 (${hintLevel}/3)`
-                )}
-              </button>
-              <button
-                onClick={handleShowAnswer}
-                className="w-full px-4 py-2 rounded-lg bg-zinc-100 text-zinc-600 text-sm font-medium hover:bg-zinc-200 border border-zinc-200 transition-colors"
-              >
-                👀 정답 보기
-              </button>
-            </div>
-          )}
+          {/* Action Buttons — 모든 주요 버튼을 여기에 모아서 찾기 쉽게 */}
+          <div className="border-t border-zinc-200 p-3 flex flex-col gap-2 shrink-0">
+            {/* 새 문제 생성 */}
+            <button
+              onClick={generateBug}
+              disabled={isGenerating}
+              className="w-full px-4 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-bold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm"
+            >
+              {isGenerating ? (
+                <span className="flex items-center justify-center gap-2">
+                  <Spinner /> 문제 생성 중...
+                </span>
+              ) : (
+                "🐛 새 문제 생성"
+              )}
+            </button>
+
+            {problem && (
+              <>
+                {/* 실행 + 제출 (가로 배치) */}
+                <div className="flex gap-2">
+                  <button
+                    onClick={handleRunCode}
+                    disabled={isRunning || !code}
+                    className="flex-1 px-4 py-2.5 rounded-lg bg-green-600 text-white text-sm font-bold hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm flex items-center justify-center gap-1.5"
+                  >
+                    {isRunning ? (
+                      <>
+                        <Spinner /> 실행 중
+                      </>
+                    ) : (
+                      <>▶ 실행</>
+                    )}
+                  </button>
+                  <button
+                    onClick={handleCheckSolution}
+                    disabled={isChecking || submitting || !code}
+                    className="flex-1 px-4 py-2.5 rounded-lg bg-amber-500 text-white text-sm font-bold hover:bg-amber-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm flex items-center justify-center gap-1.5"
+                  >
+                    {isChecking ? (
+                      <>
+                        <Spinner /> 채점 중
+                      </>
+                    ) : submitting ? (
+                      <>
+                        <Spinner /> 저장 중
+                      </>
+                    ) : (
+                      "✓ 제출"
+                    )}
+                  </button>
+                </div>
+
+                {/* 힌트 */}
+                <button
+                  onClick={handleGetHint}
+                  disabled={isHinting || hintLevel >= 3}
+                  className="w-full px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-bold hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  {isHinting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <Spinner /> 힌트 생성 중
+                    </span>
+                  ) : hintLevel >= 3 ? (
+                    "힌트 모두 사용"
+                  ) : (
+                    `💡 힌트 받기 (${hintLevel}/3)`
+                  )}
+                </button>
+
+                {/* 정답 보기 */}
+                <button
+                  onClick={handleShowAnswer}
+                  className="w-full px-4 py-2 rounded-lg bg-zinc-100 text-zinc-600 text-sm font-medium hover:bg-zinc-200 border border-zinc-200 transition-colors"
+                >
+                  👀 정답 보기
+                </button>
+              </>
+            )}
+          </div>
         </div>
 
         {/* Right Panel - Code Editor + Console */}
         <div className="flex-1 flex flex-col min-w-0">
           {/* Editor Toolbar */}
-          <div className="bg-[#252526] px-4 py-2.5 flex items-center justify-between shrink-0">
+          <div className="bg-[#252526] px-4 py-2 flex items-center shrink-0">
             <span className="text-zinc-400 text-sm font-mono">
               solution.py
             </span>
-            <div className="flex items-center gap-3">
-              <button
-                onClick={handleRunCode}
-                disabled={isRunning || !code}
-                className="px-5 py-2 rounded-lg bg-green-600 text-white text-sm font-bold hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2 shadow-sm"
-              >
-                {isRunning ? (
-                  <>
-                    <Spinner /> 실행 중
-                  </>
-                ) : (
-                  <>
-                    <span>▶</span> 코드 실행
-                  </>
-                )}
-              </button>
-              <button
-                onClick={handleCheckSolution}
-                disabled={isChecking || submitting || !problem || !code}
-                className="px-5 py-2 rounded-lg bg-blue-600 text-white text-sm font-bold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2 shadow-sm"
-              >
-                {isChecking ? (
-                  <>
-                    <Spinner /> 채점 중
-                  </>
-                ) : submitting ? (
-                  <>
-                    <Spinner /> 저장 중
-                  </>
-                ) : (
-                  "✓ 제출하기"
-                )}
-              </button>
-            </div>
           </div>
 
           {/* Monaco Editor */}
@@ -618,8 +625,8 @@ function PracticeContent() {
             />
           </div>
 
-          {/* Console Output */}
-          <div className="h-[140px] shrink-0 bg-[#1e1e1e] border-t border-[#333] flex flex-col">
+          {/* Console Output — 축소된 사이즈 */}
+          <div className="h-[100px] shrink-0 bg-[#1e1e1e] border-t border-[#333] flex flex-col">
             <div className="px-4 py-1.5 border-b border-[#333] flex items-center justify-between">
               <span className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
                 콘솔 출력
