@@ -168,21 +168,39 @@ export default function LandingPage() {
                 <tbody>
                   <tr className="border-b border-zinc-100">
                     <td className="px-6 py-4 text-zinc-700 font-medium">목표</td>
-                    <td className="px-6 py-4 text-center text-zinc-500">코드 짜기</td>
-                    <td className="px-6 py-4 text-center text-zinc-500">질문/답변</td>
-                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">코드 고치기</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">빈 화면에서<br />코드 짜기</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">질문하면<br />답변 제공</td>
+                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">버그 있는 코드를<br />읽고 고치기</td>
+                  </tr>
+                  <tr className="border-b border-zinc-100">
+                    <td className="px-6 py-4 text-zinc-700 font-medium">핵심 스킬</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">알고리즘<br />설계 능력</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">질문하는 능력</td>
+                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">디버깅<br />사고력</td>
                   </tr>
                   <tr className="border-b border-zinc-100">
                     <td className="px-6 py-4 text-zinc-700 font-medium">피드백</td>
                     <td className="px-6 py-4 text-center text-zinc-500">맞다/틀리다</td>
                     <td className="px-6 py-4 text-center text-zinc-500">답을 바로 줌</td>
-                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">AI가 사고를 유도</td>
+                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">AI가 3단계로<br />사고를 유도</td>
+                  </tr>
+                  <tr className="border-b border-zinc-100">
+                    <td className="px-6 py-4 text-zinc-700 font-medium">AI 활용</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">없음</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">범용 AI</td>
+                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">교육 특화 AI<br />(출제+힌트+채점)</td>
+                  </tr>
+                  <tr className="border-b border-zinc-100">
+                    <td className="px-6 py-4 text-zinc-700 font-medium">강사 지원</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">없음</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">없음</td>
+                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">강사 대시보드<br />+ 학생 분석</td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 text-zinc-700 font-medium">실무 연결</td>
-                    <td className="px-6 py-4 text-center text-zinc-500">코딩테스트</td>
+                    <td className="px-6 py-4 text-center text-zinc-500">코딩테스트 대비</td>
                     <td className="px-6 py-4 text-center text-zinc-500">없음</td>
-                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">디버깅 역량</td>
+                    <td className="px-6 py-4 text-center font-semibold text-blue-700 bg-blue-50/50">실무 디버깅 역량</td>
                   </tr>
                 </tbody>
               </table>
