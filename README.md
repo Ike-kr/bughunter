@@ -5,6 +5,20 @@
 ## 🌐 Live Demo
 **[https://bughunter-lovat.vercel.app](https://bughunter-lovat.vercel.app)**
 
+## 📸 스크린샷
+
+### 디버깅 연습 화면
+AI가 생성한 버그 코드를 읽고, 문제를 찾아 수정하는 메인 화면입니다.
+![디버깅 연습](docs/screenshots/practice.png)
+
+### 강사 대시보드
+학생별 풀이 현황, 버그 유형별 해결률, 전체 제출 기록을 한눈에 확인합니다.
+![강사 대시보드](docs/screenshots/teacher.png)
+
+### 레벨 진단 퀴즈
+5문제를 풀고 초급/중급/고급 레벨을 자동으로 배정받습니다.
+![레벨 진단](docs/screenshots/quiz.png)
+
 ## 💡 프로젝트 소개
 
 모든 코딩 교육은 코드 **짜는 법**을 가르칩니다. 하지만 실무 개발자의 60%는 코드 **고치는 법(디버깅)**에 시간을 사용합니다.
