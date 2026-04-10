@@ -446,6 +446,17 @@ function PracticeContent() {
               </div>
             ) : (
               <div className="space-y-5">
+                {/* 풀이 중 미니 가이드 */}
+                <div className="bg-blue-50 border border-blue-100 rounded-lg px-3 py-2.5">
+                  <p className="text-xs font-bold text-blue-700 mb-1.5">💡 풀이 순서</p>
+                  <ol className="text-xs text-blue-600 space-y-0.5 list-decimal list-inside">
+                    <li>코드를 읽고 버그를 찾아보세요.</li>
+                    <li>오른쪽 에디터에서 수정하세요.</li>
+                    <li><strong>▶ 실행</strong>으로 확인 → <strong>✓ 제출</strong>로 채점!</li>
+                  </ol>
+                  <p className="text-xs text-blue-500 mt-1">막히면 💡 힌트를 활용하세요!</p>
+                </div>
+
                 {/* Title & Badge */}
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -484,6 +495,12 @@ function PracticeContent() {
                     오른쪽 코드에서 버그를 찾아 수정한 후 &ldquo;제출&rdquo; 버튼을 눌러주세요.
                     막히면 &ldquo;힌트&rdquo; 버튼을 눌러보세요!
                   </p>
+                </div>
+
+                {/* 풀이 순서 미니 가이드 */}
+                <div className="bg-zinc-50 rounded-lg px-4 py-3 text-xs text-zinc-500 flex items-center gap-2">
+                  <span className="text-zinc-400">💡</span>
+                  <span>오른쪽 에디터에서 버그를 수정하고 <strong className="text-zinc-700">▶ 실행</strong> → <strong className="text-zinc-700">✓ 제출</strong> 순서로 진행하세요.</span>
                 </div>
 
                 {/* Hints */}
