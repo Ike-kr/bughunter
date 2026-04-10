@@ -387,43 +387,62 @@ function PracticeContent() {
           <div className="flex-1 overflow-y-auto p-5">
             {!problem ? (
               <div className="flex flex-col items-center justify-center h-full text-center px-4">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center mb-6">
-                  <span className="text-5xl">🐛</span>
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center mb-5">
+                  <span className="text-4xl">🐛</span>
                 </div>
-                <p className="text-lg font-bold text-zinc-800 mb-2">버그를 잡을 준비 되셨나요?</p>
-                <p className="text-sm text-zinc-500 mb-6 leading-relaxed">
-                  AI가 만든 버그 코드에서 문제를 찾아 수정해보세요!<br />
-                  막히면 AI 힌트가 도와줍니다.
+                <p className="text-lg font-bold text-zinc-800 mb-1">버그를 잡을 준비 되셨나요?</p>
+                <p className="text-sm text-zinc-400 mb-6">
+                  아래 가이드를 따라 시작해보세요!
                 </p>
-                <div className="bg-zinc-50 rounded-xl p-4 w-full max-w-[280px] text-left space-y-3 mb-4">
-                  <p className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">시작 방법</p>
+
+                {/* 미니 가이드 — 심사위원/첫 사용자를 위한 명확한 안내 */}
+                <div className="bg-blue-50 border border-blue-100 rounded-xl p-5 w-full text-left space-y-4 mb-5">
+                  <p className="text-sm font-bold text-blue-800">빠른 시작 가이드</p>
+
                   <div className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">1</span>
-                    <p className="text-sm text-zinc-600">위에서 <strong>학생 이름</strong> 입력</p>
+                    <span className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                    <div>
+                      <p className="text-sm font-semibold text-zinc-800">이름 입력</p>
+                      <p className="text-xs text-zinc-500">상단에서 학생 이름을 입력하세요.</p>
+                    </div>
                   </div>
+
                   <div className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">2</span>
-                    <p className="text-sm text-zinc-600"><strong>주제</strong>와 <strong>난이도</strong> 선택</p>
+                    <span className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                    <div>
+                      <p className="text-sm font-semibold text-zinc-800">주제 &amp; 난이도 선택</p>
+                      <p className="text-xs text-zinc-500">학습할 주제와 난이도를 고르세요.</p>
+                    </div>
                   </div>
+
                   <div className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0">3</span>
-                    <p className="text-sm text-zinc-600"><strong>새 문제 생성</strong> 버튼 클릭!</p>
+                    <span className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                    <div>
+                      <p className="text-sm font-semibold text-zinc-800">&ldquo;새 문제 생성&rdquo; 클릭</p>
+                      <p className="text-xs text-zinc-500">AI가 버그가 숨겨진 코드를 만들어줍니다.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="w-7 h-7 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold shrink-0">4</span>
+                    <div>
+                      <p className="text-sm font-semibold text-zinc-800">버그 찾기 &amp; 수정</p>
+                      <p className="text-xs text-zinc-500">오른쪽 에디터에서 코드를 수정하고 실행해보세요.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="w-7 h-7 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-bold shrink-0">5</span>
+                    <div>
+                      <p className="text-sm font-semibold text-zinc-800">막히면? AI 힌트!</p>
+                      <p className="text-xs text-zinc-500">3단계 힌트가 답 대신 사고 과정을 유도합니다.</p>
+                    </div>
                   </div>
                 </div>
-                <div className="space-y-3 w-full max-w-[240px]">
-                  <div className="flex items-center gap-3 text-left">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm shrink-0">1</div>
-                    <p className="text-xs text-zinc-500">AI가 버그가 숨겨진 코드를 생성해요</p>
-                  </div>
-                  <div className="flex items-center gap-3 text-left">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm shrink-0">2</div>
-                    <p className="text-xs text-zinc-500">코드를 분석하고 버그를 찾아 수정하세요</p>
-                  </div>
-                  <div className="flex items-center gap-3 text-left">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm shrink-0">3</div>
-                    <p className="text-xs text-zinc-500">막히면 AI 힌트를 요청할 수 있어요</p>
-                  </div>
-                </div>
+
+                <p className="text-xs text-zinc-400">
+                  주제 10개 × 난이도 3단계 — AI가 매번 새로운 문제를 생성합니다.
+                </p>
               </div>
             ) : (
               <div className="space-y-5">
