@@ -103,6 +103,7 @@ function PracticeContent() {
     setHints([]);
     setHintLevel(0);
     setConsoleOutput("");
+    setShowAnswerUsed(false);
 
     try {
       const res = await fetch("/api/generate-bug", {
@@ -254,11 +255,18 @@ function PracticeContent() {
     }
   }, [problem, code, studentName, submitResult]);
 
+  const [showAnswerUsed, setShowAnswerUsed] = useState(false);
+
   const handleShowAnswer = useCallback(() => {
     if (!problem) return;
+    if (!problem.correctCode) {
+      setConsoleOutput("정답 코드를 불러올 수 없습니다. 새 문제를 생성해주세요.");
+      return;
+    }
     setCode(problem.correctCode);
     setResult(null);
-    setConsoleOutput("정답 코드가 에디터에 표시되었습니다. 코드를 실행해서 결과를 확인해보세요.");
+    setShowAnswerUsed(true);
+    setConsoleOutput("✅ 정답 코드가 오른쪽 에디터에 표시되었습니다.\n▶ '실행' 버튼을 눌러 결과를 확인해보세요.");
   }, [problem]);
 
   return (
@@ -581,9 +589,13 @@ function PracticeContent() {
                 {/* 정답 보기 */}
                 <button
                   onClick={handleShowAnswer}
-                  className="w-full px-4 py-2 rounded-lg bg-zinc-100 text-zinc-600 text-sm font-medium hover:bg-zinc-200 border border-zinc-200 transition-colors"
+                  className={`w-full px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
+                    showAnswerUsed
+                      ? "bg-green-50 text-green-700 border-green-200"
+                      : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 border-zinc-200"
+                  }`}
                 >
-                  👀 정답 보기
+                  {showAnswerUsed ? "✅ 정답이 에디터에 표시됨" : "👀 정답 보기"}
                 </button>
               </>
             )}
