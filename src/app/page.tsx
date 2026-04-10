@@ -72,6 +72,43 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* 심사위원 체험 가이드 */}
+      <section className="py-10 bg-gradient-to-r from-blue-600 to-blue-700">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-6">
+            <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium mb-3">QUICK START</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">3분 체험 가이드</h2>
+            <p className="text-blue-100 text-sm">이 순서대로 체험하시면 BugHunter의 핵심을 빠르게 경험할 수 있습니다.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link href="/quiz" className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-5 hover:bg-white/20 transition-all group text-center">
+              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
+                <span className="text-white text-xl font-bold">1</span>
+              </div>
+              <h3 className="text-white font-bold mb-1 group-hover:underline">레벨 진단</h3>
+              <p className="text-blue-100 text-xs leading-relaxed">5문제 퀴즈로 학생의<br />Python 수준을 파악합니다.</p>
+              <span className="text-blue-200 text-xs mt-2 block">약 1분 소요 →</span>
+            </Link>
+            <Link href="/practice" className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-5 hover:bg-white/20 transition-all group text-center">
+              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
+                <span className="text-white text-xl font-bold">2</span>
+              </div>
+              <h3 className="text-white font-bold mb-1 group-hover:underline">디버깅 연습</h3>
+              <p className="text-blue-100 text-xs leading-relaxed">AI가 만든 버그 코드를<br />찾아 고치는 핵심 기능입니다.</p>
+              <span className="text-blue-200 text-xs mt-2 block">약 2분 소요 →</span>
+            </Link>
+            <Link href="/teacher" className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-5 hover:bg-white/20 transition-all group text-center">
+              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
+                <span className="text-white text-xl font-bold">3</span>
+              </div>
+              <h3 className="text-white font-bold mb-1 group-hover:underline">강사 대시보드</h3>
+              <p className="text-blue-100 text-xs leading-relaxed">학생들의 풀이 현황을<br />한눈에 확인할 수 있습니다.</p>
+              <span className="text-blue-200 text-xs mt-2 block">약 30초 소요 →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section id="problem" className="py-14 sm:py-20 bg-zinc-900 scroll-mt-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
