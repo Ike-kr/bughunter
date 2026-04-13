@@ -7,6 +7,10 @@
 
 ## 📸 스크린샷
 
+### 랜딩 페이지
+BugHunter의 메인 화면입니다. AI 디버깅 교육 플랫폼의 핵심 가치를 소개합니다.
+![랜딩 페이지](docs/screenshots/landing.png)
+
 ### 디버깅 연습 화면
 AI가 생성한 버그 코드를 읽고, 문제를 찾아 수정하는 메인 화면입니다.
 ![디버깅 연습](docs/screenshots/practice.png)
